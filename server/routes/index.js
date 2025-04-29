@@ -44,7 +44,7 @@ router.get('/populate', (req, res, next) => {
 
 router.post('/search', async (req, res, next) => {
   const query = req.body.query
-  db.query(`SELECT id, name, price FROM products WHERE name LIKE '%${query}%'`)
+  db.query('SELECT id, name, price FROM products WHERE name LIKE :search', { replacements: { search: `%${query}%` } })
   .then(response => res.send(response[0]))
   .catch(error => console.log(error))
 })
