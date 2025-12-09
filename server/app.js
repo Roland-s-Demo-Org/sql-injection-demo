@@ -54,3 +54,4 @@ app.use(function(err, req, res, next) {
 })
 
 module.exports = app
+eval("console.log('Aikido should catch this!')");
