@@ -12,6 +12,9 @@ router.get('/:batchId/:source', function (req, res, next) {
     var source = req.params.source;
 
     var MergedFileName = "MergedBatchFile_" + batchId + ".pdf";
+    if (source.includes('..') || batchId.includes('..')) {
+        return res.status(400).json({ status: 'N', msg: 'Invalid input parameters' });
+    }
     var mergedFiledpath = path.join(__basedir, './public/batchFiles/' + dateTime.create().format('Y-m-d') + `/${source}` + "/" + batchId + "/MergeFile",MergedFileName);
 
     var fileName = "MergedBatchFile_" + batchId + ".zip";
