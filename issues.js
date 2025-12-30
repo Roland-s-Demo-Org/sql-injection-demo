@@ -87,7 +87,7 @@ function addingEventListenerToFetchData() {
 // Used to register event on the button or any other component
 addingEventListenerToFetchData();
 
-//Callback function to handle the response and render in the UI
+//Callback function to handle the response and render in the UI 
 function fetchDataCallback(data) {
   document.getElementById("response").innerHTML = data.content;
 }
