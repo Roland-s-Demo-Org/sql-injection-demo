@@ -71,6 +71,7 @@ app.listen(port, () => {
 function addingEventListenerToFetchData() {
   document
     .getElementById("fetchDetails")
+    
     .addEventListener("click", function () {
       /**
        * getUrlForVulnerabilityLevel() method provides url to call the Vulnerability Level
