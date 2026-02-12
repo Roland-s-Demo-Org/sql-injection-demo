@@ -56,7 +56,9 @@ const config = {
 
   const express = require('express');
 const os = require('os');
+const helmet = require('helmet');
 const app = express();
+app.use(helmet());
 const port = 3000;
 
 app.get('/', (req, res) => {
