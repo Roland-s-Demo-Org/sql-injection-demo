@@ -4,6 +4,7 @@ var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 const cors = require('cors')
+const helmet = require('helmet')
 require('custom-env').env()
 
 // Database
@@ -20,6 +21,8 @@ db.sync()
 var indexRouter = require('./routes/index')
 
 var app = express()
+
+app.use(helmet())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
